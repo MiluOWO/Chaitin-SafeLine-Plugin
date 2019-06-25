@@ -26,13 +26,11 @@ function legalIp(ip)
 		end 
 		ip_part[#ip_part+1]=i
 	end
-	if ip_part[1]=='10' then 
+	if ip_part[1]=='10' or ip_part[1]=='127' then 
 		return nil
 	elseif ip_part[1]=='172' and (tonumber(ip_part[2])>=16 and tonumber(ip_part[2])<=31) then 
 		return nil
 	elseif ip_part[1]=='192' and ip_part[2]=='168' then
-		return nil
-	elseif ip_part[1]=='127' and ip_part[2]=='0' and ip_part[3]=='0' and ip_part[4]=='0' then
 		return nil
 	end 
 	if flag ==0 then 
