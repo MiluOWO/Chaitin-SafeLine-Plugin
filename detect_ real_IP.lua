@@ -32,6 +32,8 @@ function legalIp(ip)
 		return nil
 	elseif ip_part[1]=='192' and ip_part[2]=='168' then
 		return nil
+	elseif ip_part[1]=='127' and ip_part[2]=='0' and ip_part[3]=='0' and ip_part[4]=='0' then
+		return nil
 	end 
 	if flag ==0 then 
 		return 1
